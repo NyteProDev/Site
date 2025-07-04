@@ -13,12 +13,13 @@ function Login() {
     setError('');
 
     try {
-      const response = await fetch('/api/login', { // ✅ Chemin relatif vers API Vercel
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'include', // ✅ important pour le cookie
-        body: JSON.stringify({ Email: email, Password: password }),
-      });
+        const response = await fetch('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({ Email: email, Password: password }),
+        });
+
 
       const data = await response.json();
 
