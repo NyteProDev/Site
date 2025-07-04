@@ -10,14 +10,17 @@ html, body {
 
 /* 🏡 HOME */
 .home {
-  width: 200vh;
-  min-height: 89vh;
+  width: 100%;             /* largeur = 100% de l'écran */
+  min-height: 100vh;       /* hauteur = 100% de l'écran */
   background: linear-gradient(to bottom, #007a3d, #065f2f);
   color: white;
   text-align: center;
   position: relative;
   padding: 2rem 1rem;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centre verticalement */
+  align-items: center;     /* centre horizontalement */
 }
 .feature-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
