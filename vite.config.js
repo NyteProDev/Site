@@ -3,11 +3,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: './', // ✅ relative path pour corriger Vercel
   build: {
     outDir: 'dist'
-  },
-  server: {
-    historyApiFallback: true // 🔥 important pour React Router
   }
 });
