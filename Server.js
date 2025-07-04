@@ -16,9 +16,9 @@ app.use(cookieParser());
 
 // ⚙️ Connexion à la base MySQL
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
+  host: '185.91.69.200',
+  user: 'nyte',
+  password: 'occelaris40600@',
   database: 'site'
 });
 
