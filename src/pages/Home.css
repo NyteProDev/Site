@@ -12,7 +12,7 @@ html, body {
 .home {
   width: 100%;             /* largeur = 100% de l'écran */
   min-height: 100vh;       /* hauteur = 100% de l'écran */
-  max-width: 1200px;
+  max-width: none;
   background: linear-gradient(to bottom, #007a3d, #065f2f);
   color: white;
   margin: 0 auto;
