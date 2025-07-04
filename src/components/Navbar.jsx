@@ -8,7 +8,7 @@ function Navbar() {
   const navigate = useNavigate();
 
   const handleLogout = async () => {
-    await fetch('http://localhost:5000/api/logout', {
+        await fetch('/api/logout', {
       credentials: 'include',
       method: 'POST',
     });
