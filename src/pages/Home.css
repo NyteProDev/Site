@@ -12,8 +12,10 @@ html, body {
 .home {
   width: 100%;             /* largeur = 100% de l'écran */
   min-height: 100vh;       /* hauteur = 100% de l'écran */
+  max-width: 1200px;
   background: linear-gradient(to bottom, #007a3d, #065f2f);
   color: white;
+  margin: 0 auto;
   text-align: center;
   position: relative;
   padding: 2rem 1rem;
@@ -174,4 +176,17 @@ html, body {
 .btn-news:hover {
   background-color: #444;
   transform: scale(1.05);
+}
+@media (min-width: 1200px) {
+  .home-title {
+    font-size: 4rem;
+  }
+
+  .home-hero {
+    padding: 10rem;
+  }
+
+  .features-list {
+    gap: 3rem;
+  }
 }
