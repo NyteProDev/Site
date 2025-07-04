@@ -1,17 +1,44 @@
 {
-  "name": "site-local",
+  "name": "mon-site",
   "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run dev --prefix frontend\" \"node server.js\""
-  },
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+},
   "dependencies": {
-    "express": "^5.1.0",
-    "cors": "^2.8.5",
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
     "cookie-parser": "^1.4.7",
-    "body-parser": "^1.20.2"
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.14.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.6.3",
+    "react-tsparticles": "^2.12.2",
+    "sweetalert2": "^11.22.2",
+    "tsparticles": "^3.8.1"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
-  }
+    "@eslint/js": "^9.29.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.5.2",
+    "concurrently": "^9.2.0",
+    "eslint": "^9.29.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.2.0",
+    "vite": "^7.0.0"
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
