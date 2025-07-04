@@ -1,0 +1,140 @@
+/* 🌐 GLOBAL */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-y: auto !important;   /* ❌ bloque le scroll vertical */
+  overflow-x: hidden !important;     /* ✅ autorise le scroll horizontal */
+}
+
+/* 🏡 HOME */
+.home {
+  width: 100%;
+  min-height: 100%;
+  background: linear-gradient(to bottom, #007a3d, #065f2f);
+  color: white;
+  text-align: center;
+  position: relative;
+  padding: 2rem 1rem;
+  display: block;
+}
+
+.home-hero {
+  margin-bottom: 3rem;
+  padding: 5rem 1rem;
+}
+
+.home-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  word-wrap: break-word;
+}
+
+.home-title span {
+  color: #ffd000;
+}
+
+.home-subtitle {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 1rem auto 2rem;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* 🔘 BUTTONS */
+.btn, .btn-news, .btn-discord {
+  background-color: #ffd000;
+  color: #1f1300;
+  padding: 0.8rem 1.6rem;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover,
+.btn-discord:hover,
+.btn-news:hover {
+  transform: scale(1.05);
+  background-color: #ffe05e;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid #ffd000;
+  color: #ffd000;
+}
+
+.btn-secondary:hover {
+  background-color: #ffd000;
+  color: #1f1300;
+}
+
+/* 🧩 FEATURES */
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.feature-card {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background-color: #054d37;
+}
+
+.feature-card h3 {
+  color: #ffd000;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+}
+
+/* 🎨 RESPONSIVE */
+@media (max-width: 768px) {
+  .btn {
+    width: 90%;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,143 @@
+/* ======================================
+   🌐 BASE : Reset + style général du site
+====================================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+}
+
+/* ======================================
+   📐 LAYOUT : structure et conteneur
+====================================== */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  padding: 2em;
+}
+
+/* ======================================
+   🧩 COMPONENTS : éléments réutilisables
+====================================== */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* ======================================
+   🎞️ ANIMATIONS : keyframes & effets
+====================================== */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+/* === Page d'accueil === */
+.home {
+  background: linear-gradient(to bottom, #ff8800, #5a2d0c);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 2rem;
+}
+
+.home-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.home-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  text-align: center;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background-color: #ffb100;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  font-weight: bold;
+  color: #2d1a00;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffd27a;
+}
+
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 1.8rem;
+  }
+
+  .home-subtitle {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+}
+
+.container {
+  width: 100vw;
+  max-width: none; /* empêche de rester bloqué à 1200px */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+.home {
+  min-height: calc(100vh - 60px); /* si navbar fixe 60px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
