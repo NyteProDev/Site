@@ -7,8 +7,8 @@ export function AuthProvider({ children }) {
 
   // Vérifie si un utilisateur est connecté
   const fetchUser = () => {
-    fetch('/api/account', { // ✅ Utilise chemin relatif vers API Vercel
-      credentials: 'include', // ✅ important pour envoyer le cookie
+    fetch('http://localhost:5000/api/account', {
+      credentials: 'include',
     })
       .then((res) => res.json())
       .then((data) => {

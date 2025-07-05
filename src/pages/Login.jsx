@@ -13,7 +13,7 @@ function Login() {
     setError('');
 
     try {
-      const response = await fetch('/api/login', { // ✅ Chemin relatif vers API Vercel
+      const response = await fetch('http://localhost:5000/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include', // ✅ important pour le cookie
@@ -41,7 +41,7 @@ function Login() {
         setError(data.message || 'Erreur de connexion');
       }
     } catch (err) {
-      setError('❌ Erreur réseau ou serveur');
+      setError('Erreur serveur');
     }
   };
 
@@ -55,14 +55,12 @@ function Login() {
             placeholder="Adresse mail"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            required
           />
           <input
             type="password"
             placeholder="Mot de passe"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            required
           />
           <button type="submit">Se connecter</button>
         </form>

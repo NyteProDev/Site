@@ -14,10 +14,10 @@ function CreateGameAccountForm({ onClose, isVisible }) {
     setMessage('');
 
     try {
-      const response = await fetch('/api/create-game-account', {
+      const response = await fetch('http://localhost:5000/api/create-game-account', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        credentials: 'include', // ✅ important pour les cookies
+        credentials: 'include',
         body: JSON.stringify({ Login: login, Nickname: nickname, Password: password }),
       });
       const data = await response.json();
@@ -80,8 +80,8 @@ function MonCompte() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('/api/account', {
-      credentials: 'include', // ✅ pour envoyer le cookie rememberme
+    fetch('http://localhost:5000/api/account', {
+      credentials: 'include',
     })
       .then((res) => res.json())
       .then((data) => {
@@ -96,7 +96,7 @@ function MonCompte() {
   }, [navigate]);
 
   const handleLogout = async () => {
-    await fetch('/api/logout', {
+    await fetch('http://localhost:5000/api/logout', {
       credentials: 'include',
       method: 'POST',
     });
@@ -115,25 +115,25 @@ function MonCompte() {
   }
 
   return (
-    <div className="account-page">
-      <div className={`account-wrapper ${panelOpen ? 'shift-left' : ''}`}>
-        <div className="account-panel">
-          <h2>Bienvenue, {user.Login} 👋</h2>
-          <p><strong>Email :</strong> {user.Email}</p>
-          <p><strong>Ogrines :</strong> {user.Ogrine}</p>
-
-          <button onClick={() => setPanelOpen(true)}>Créer un compte jeu</button>
-          <button className="logout-btn" onClick={handleLogout}>Se déconnecter</button>
-        </div>
-
-        {/* ✅ Toujours présent mais fade */}
-        <CreateGameAccountForm
-          onClose={() => setPanelOpen(false)}
-          isVisible={panelOpen}
-        />
+  <div className="account-page">
+    <div className={`account-wrapper ${panelOpen ? 'shift-left' : ''}`}>
+      <div className="account-panel">
+        <h2>Bienvenue, {user.Login} 👋</h2>
+        <p><strong>Email :</strong> {user.Email}</p>
+        <p><strong>Ogrines :</strong> {user.Ogrine}</p>
+       
+        <button onClick={() => setPanelOpen(true)}>Créer un compte jeu</button>
+        <button className="logout-btn" onClick={handleLogout}>Se déconnecter</button>
       </div>
+
+      {/* ✅ Toujours présent mais fade */}
+      <CreateGameAccountForm
+        onClose={() => setPanelOpen(false)}
+        isVisible={panelOpen}
+      />
     </div>
-  );
+  </div>
+);
 }
 
 export default MonCompte;
