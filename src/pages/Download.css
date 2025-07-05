@@ -3,10 +3,12 @@
   justify-content: center;
   align-items: center;
   min-height: 94vh;
-  width: 100vw;
+  width: 100%;
   background: linear-gradient(135deg, #01733b, #00884a);
   background-size: 400% 400%;
   animation: gradientMove 10s ease infinite;
+  padding: 2rem; /* évite que le contenu colle aux bords */
+  box-sizing: border-box;
 }
 
 @keyframes gradientMove {
@@ -23,18 +25,16 @@
   color: #ffffff;
   text-align: center;
   padding: 3rem 4rem;
-  max-width: 800px;
-  width: 95%;
+  max-width: 1200px;
+  width: 100%;
   animation: fadeIn 0.6s ease forwards;
+  box-sizing: border-box;
 }
 
 .download-panel h1 {
   font-size: 2.2rem;
   font-weight: 700;
   color: #ffd700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 1rem;
 }
 
@@ -46,16 +46,23 @@
 
 .download-links {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  justify-content: center;
+  gap: 2rem;
   margin-top: 2rem;
 }
 
 .download-card {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  padding: 1.5rem 1.8rem;
   min-width: 220px;
   max-width: 280px;
   flex: 1 1 220px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
 .download-card:hover {
@@ -102,7 +109,12 @@
   to { opacity: 1; transform: scale(1); }
 }
 
+/* 🌙 Responsive Mobile */
 @media (max-width: 768px) {
+  .download-panel {
+    padding: 2rem;
+  }
+
   .download-links {
     flex-direction: column;
     align-items: center;
@@ -110,5 +122,14 @@
 
   .download-card {
     width: 90%;
+    max-width: 320px;
+  }
+
+  .download-panel h1 {
+    font-size: 1.8rem;
+  }
+
+  .download-panel p {
+    font-size: 1rem;
   }
 }
