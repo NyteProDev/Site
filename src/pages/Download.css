@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: auto;
+  min-height: 100%;
   width: 100%;
   background: linear-gradient(135deg, #01733b, #00884a);
   background-size: 400% 400%;
