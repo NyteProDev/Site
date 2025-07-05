@@ -2,12 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 94vh;
+  min-height: auto;
   width: 100%;
   background: linear-gradient(135deg, #01733b, #00884a);
   background-size: 400% 400%;
   animation: gradientMove 10s ease infinite;
-  padding: 2rem; /* évite que le contenu colle aux bords */
+  padding: 3rem 1rem;
   box-sizing: border-box;
 }
 
